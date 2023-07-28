@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lidar3DScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ec-jm-Ilo">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            </arView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cSD-9e-VOZ">
+                                <rect key="frame" x="119.33333333333333" y="783.66666666666663" width="154.66666666666669" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMg-AE-J1e">
+                                        <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Reset"/>
+                                        <connections>
+                                            <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ml4-is-NXM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lp-9F-VFF">
+                                        <rect key="frame" x="87.333333333333343" y="0.0" width="67.333333333333343" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                        <connections>
+                                            <action selector="saveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PgB-xz-X0g"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0ec-jm-Ilo" secondAttribute="bottom" id="4ZF-5w-cFI"/>
+                            <constraint firstItem="0ec-jm-Ilo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Fgk-Xx-P6H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0ec-jm-Ilo" secondAttribute="trailing" id="I1P-7M-W3T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cSD-9e-VOZ" secondAttribute="bottom" id="Lfb-61-ABG"/>
+                            <constraint firstItem="0ec-jm-Ilo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MqF-Wp-mXy"/>
+                            <constraint firstItem="cSD-9e-VOZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pbf-Vc-KQ2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="arView" destination="0ec-jm-Ilo" id="Aj5-dI-baZ"/>
+                        <outlet property="resetButton" destination="SMg-AE-J1e" id="csB-yW-aL7"/>
+                        <outlet property="saveButton" destination="0lp-9F-VFF" id="tBz-bv-Tub"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21" y="4"/>
+        </scene>
+        <!--Model Viewer View Controller-->
+        <scene sceneID="E6k-7g-IOM">
+            <objects>
+                <viewController storyboardIdentifier="ModelViewerViewController" id="hHX-X5-zj0" customClass="ModelViewerViewController" customModule="Lidar3DScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lkr-aE-LZo">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCh-ww-9dX">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6T-vC-Olf">
+                                <rect key="frame" x="306" y="59" width="67" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="hHX-X5-zj0" eventType="touchUpInside" id="hVf-7Z-AD0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFZ-rD-5Xv">
+                                <rect key="frame" x="20" y="59" width="68" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Share"/>
+                                <connections>
+                                    <action selector="shareButtonPressed:" destination="hHX-X5-zj0" eventType="touchUpInside" id="0mL-u0-iTC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FO7-ru-Nn0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FO7-ru-Nn0" firstAttribute="trailing" secondItem="JCh-ww-9dX" secondAttribute="trailing" id="2Uh-9S-x2x"/>
+                            <constraint firstItem="FO7-ru-Nn0" firstAttribute="bottom" secondItem="JCh-ww-9dX" secondAttribute="bottom" id="L4n-Ci-1fP"/>
+                            <constraint firstItem="FO7-ru-Nn0" firstAttribute="trailing" secondItem="R6T-vC-Olf" secondAttribute="trailing" constant="20" id="d3B-58-Mwb"/>
+                            <constraint firstItem="JCh-ww-9dX" firstAttribute="leading" secondItem="FO7-ru-Nn0" secondAttribute="leading" id="hNR-2c-Y0p"/>
+                            <constraint firstItem="R6T-vC-Olf" firstAttribute="top" secondItem="FO7-ru-Nn0" secondAttribute="top" id="i5T-KE-jLp"/>
+                            <constraint firstItem="SFZ-rD-5Xv" firstAttribute="leading" secondItem="FO7-ru-Nn0" secondAttribute="leading" constant="20" id="lrS-Qw-Jnj"/>
+                            <constraint firstItem="JCh-ww-9dX" firstAttribute="top" secondItem="FO7-ru-Nn0" secondAttribute="top" id="mEH-Y3-tpi"/>
+                            <constraint firstItem="SFZ-rD-5Xv" firstAttribute="top" secondItem="FO7-ru-Nn0" secondAttribute="top" id="pq2-3Y-CqT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="viewer" destination="JCh-ww-9dX" id="Gao-EB-wHV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aEB-Cb-q4M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="738" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
